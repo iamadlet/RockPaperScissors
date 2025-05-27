@@ -45,14 +45,6 @@ class GameManager: ObservableObject {
     }
     
     //MARK: - Getter functions
-    func getFirstScore() -> Int {
-        firstScore
-    }
-    
-    func getSecondScore() -> Int {
-        secondScore
-    }
-    
     func getRoundNumber() -> Int {
         roundNumber
     }

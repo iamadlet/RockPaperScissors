@@ -5,11 +5,14 @@ struct PickMoveButton: View {
     //MARK: - Properties
     @ObservedObject var gameManager: GameManager
     let move: Move
+    let onSelect: () -> Void
     
     //MARK: - Body
     var body: some View {
         Button(action: {
-            
+            gameManager.firstMove = move
+            onSelect()
+            print("You picked \(move)")
         }, label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 48)
@@ -24,5 +27,5 @@ struct PickMoveButton: View {
 }
 
 #Preview {
-    PickMoveButton(gameManager: GameManager(), move: .paper)
+    PickMoveButton(gameManager: GameManager(), move: .paper, onSelect: {})
 }

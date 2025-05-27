@@ -22,6 +22,8 @@
 		A03221E52DE6124700A719E5 /* GameModeLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03221E42DE6124700A719E5 /* GameModeLink.swift */; };
 		A03221E72DE616B600A719E5 /* CustomTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03221E62DE616B600A719E5 /* CustomTitle.swift */; };
 		A03221EB2DE6211300A719E5 /* PickMoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03221EA2DE6211300A719E5 /* PickMoveButton.swift */; };
+		A03221EE2DE66FFC00A719E5 /* PlayerMadeChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03221ED2DE66FFC00A719E5 /* PlayerMadeChoice.swift */; };
+		A03221F02DE6731400A719E5 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03221EF2DE6731400A719E5 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		A03221E42DE6124700A719E5 /* GameModeLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeLink.swift; sourceTree = "<group>"; };
 		A03221E62DE616B600A719E5 /* CustomTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitle.swift; sourceTree = "<group>"; };
 		A03221EA2DE6211300A719E5 /* PickMoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickMoveButton.swift; sourceTree = "<group>"; };
+		A03221ED2DE66FFC00A719E5 /* PlayerMadeChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMadeChoice.swift; sourceTree = "<group>"; };
+		A03221EF2DE6731400A719E5 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				A03221AF2DE603DB00A719E5 /* HomePage.swift */,
-				A03221DB2DE60A2500A719E5 /* SinglePlayer.swift */,
+				A03221EC2DE66FE500A719E5 /* SinglePlayerViews */,
 				A03221DD2DE60A4600A719E5 /* MultiPlayer.swift */,
 			);
 			path = View;
@@ -171,6 +175,7 @@
 				A03221E42DE6124700A719E5 /* GameModeLink.swift */,
 				A03221E62DE616B600A719E5 /* CustomTitle.swift */,
 				A03221EA2DE6211300A719E5 /* PickMoveButton.swift */,
+				A03221EF2DE6731400A719E5 /* CustomButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -189,6 +194,15 @@
 				A03221D92DE604AC00A719E5 /* GameManager.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A03221EC2DE66FE500A719E5 /* SinglePlayerViews */ = {
+			isa = PBXGroup;
+			children = (
+				A03221DB2DE60A2500A719E5 /* SinglePlayer.swift */,
+				A03221ED2DE66FFC00A719E5 /* PlayerMadeChoice.swift */,
+			);
+			path = SinglePlayerViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,10 +338,12 @@
 				A03221DE2DE60A4600A719E5 /* MultiPlayer.swift in Sources */,
 				A03221D82DE603EB00A719E5 /* Model.swift in Sources */,
 				A03221E52DE6124700A719E5 /* GameModeLink.swift in Sources */,
+				A03221EE2DE66FFC00A719E5 /* PlayerMadeChoice.swift in Sources */,
 				A03221DC2DE60A2500A719E5 /* SinglePlayer.swift in Sources */,
 				A03221B02DE603DB00A719E5 /* HomePage.swift in Sources */,
 				A03221E22DE6108200A719E5 /* Extensions+Color.swift in Sources */,
 				A03221E72DE616B600A719E5 /* CustomTitle.swift in Sources */,
+				A03221F02DE6731400A719E5 /* CustomButton.swift in Sources */,
 				A03221EB2DE6211300A719E5 /* PickMoveButton.swift in Sources */,
 				A03221DA2DE604AC00A719E5 /* GameManager.swift in Sources */,
 				A03221AE2DE603DB00A719E5 /* RockPaperScissorsApp.swift in Sources */,
