@@ -19,7 +19,11 @@ struct SinglePlayer: View {
             Text("Score \(vm.getFirstScore()):\(vm.getSecondScore())")
                 .foregroundStyle(Color.customPurple)
             
-            PickMoveButton(gameManamove: .paper)
+            PickMoveButton(gameManager: vm, move: .paper)
+            
+            PickMoveButton(gameManager: vm, move: .rock)
+            
+            PickMoveButton(gameManager: vm, move: .scissors)
         }
         .navigationTitle("Round #\(vm.getRoundNumber())")
     }
