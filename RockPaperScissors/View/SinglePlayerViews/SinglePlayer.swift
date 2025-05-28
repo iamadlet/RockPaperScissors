@@ -8,7 +8,7 @@ struct SinglePlayer: View {
     @State private var stage: GameStage = .picking
     @State private var selectedMove: Move? = nil
     @State private var roundResult: Int? = nil
-    
+    @State private var waitTask: Task<Void, Never>? = nil
     
     let moves: [Move] = [
         .paper,
@@ -56,13 +56,20 @@ struct SinglePlayer: View {
                     selectedMove = selectedMove!
                 }
                 .task {
-                    try? await Task.sleep(nanoseconds: 2_000_000_000)
-                    stage = .loading
+                    let task = Task {
+                        try? await Task.sleep(nanoseconds: 2_000_000_000)
+                        if !Task.isCancelled {
+                            stage = .loading
+                        }
+                    }
+                    waitTask = task
                 }
 
                 Spacer()
 
                 CustomButton(text: "I changed my mind") {
+                    waitTask?.cancel()
+                    waitTask = nil
                     selectedMove = nil
                     stage = .picking
                 }
@@ -72,12 +79,12 @@ struct SinglePlayer: View {
             VStack {
                 CustomTitle(text: "Your opponent is thinking", color: .black)
                 
-            ProgressView()
-                .task {
-                    try? await Task.sleep(nanoseconds: 2_000_000_000)
-                    stage = .botChose
-                    vm.secondMove = vm.botMove(excluding: .notChosen)
-                }
+                ProgressView()
+                    .task {
+                        try? await Task.sleep(nanoseconds: 2_000_000_000)
+                        stage = .botChose
+                        vm.secondMove = vm.botMove(excluding: .notChosen)
+                    }
                 .foregroundStyle(Color.customGray)
                 .frame(width: 342, height: 128)
             }
@@ -105,19 +112,33 @@ struct SinglePlayer: View {
             VStack {
                 switch roundResult {
                 case 1:
-                    Text("Win")
+                    CustomTitle(text: "Win!", color: Color.customGreen)
                 case 2:
-                    Text("Lose")
+                    CustomTitle(text: "Lose", color: Color.customRed)
                 case 3:
-                    Text("Tie")
+                    CustomTitle(text: "Tie", color: Color.customYellow)
                 default:
                     Text("Error")
                 }
                 
+                Text("Score \(vm.firstScore):\(vm.secondScore)")
+                    .foregroundStyle(Color.customPurple)
+                    .padding(.bottom, 74)
+                
+//                Spacer()
+                
+                ResultView(firstMove: selectedMove!, secondMove: vm.secondMove)
+                
+                Spacer()
                 
                 CustomButton(text: "Another round") {
                     vm.anotherRound()
                     stage = .picking
+                }
+            }
+            .task {
+                if vm.isGameEnded() {
+                    vm.restartGame()
                 }
             }
         }

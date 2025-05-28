@@ -24,6 +24,7 @@
 		A03221EB2DE6211300A719E5 /* PickMoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03221EA2DE6211300A719E5 /* PickMoveButton.swift */; };
 		A03221EE2DE66FFC00A719E5 /* PlayerMadeChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03221ED2DE66FFC00A719E5 /* PlayerMadeChoice.swift */; };
 		A03221F02DE6731400A719E5 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03221EF2DE6731400A719E5 /* CustomButton.swift */; };
+		A03221F22DE765F600A719E5 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03221F12DE765F600A719E5 /* ResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		A03221EA2DE6211300A719E5 /* PickMoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickMoveButton.swift; sourceTree = "<group>"; };
 		A03221ED2DE66FFC00A719E5 /* PlayerMadeChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMadeChoice.swift; sourceTree = "<group>"; };
 		A03221EF2DE6731400A719E5 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		A03221F12DE765F600A719E5 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				A03221E62DE616B600A719E5 /* CustomTitle.swift */,
 				A03221EA2DE6211300A719E5 /* PickMoveButton.swift */,
 				A03221EF2DE6731400A719E5 /* CustomButton.swift */,
+				A03221F12DE765F600A719E5 /* ResultView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				A03221DC2DE60A2500A719E5 /* SinglePlayer.swift in Sources */,
 				A03221B02DE603DB00A719E5 /* HomePage.swift in Sources */,
 				A03221E22DE6108200A719E5 /* Extensions+Color.swift in Sources */,
+				A03221F22DE765F600A719E5 /* ResultView.swift in Sources */,
 				A03221E72DE616B600A719E5 /* CustomTitle.swift in Sources */,
 				A03221F02DE6731400A719E5 /* CustomButton.swift in Sources */,
 				A03221EB2DE6211300A719E5 /* PickMoveButton.swift in Sources */,
@@ -510,6 +514,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RockPaperScissors/Preview Content\"";
+				DEVELOPMENT_TEAM = B4P4NWJDXZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -538,6 +543,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RockPaperScissors/Preview Content\"";
+				DEVELOPMENT_TEAM = B4P4NWJDXZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

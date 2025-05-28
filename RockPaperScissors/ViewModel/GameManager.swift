@@ -36,7 +36,7 @@ class GameManager: ObservableObject {
     }
     
     func isGameEnded() -> Bool {
-        firstScore > 3 || secondScore > 3
+        firstScore == 3 || secondScore == 3
     }
     
     func restartGame() {
@@ -45,7 +45,9 @@ class GameManager: ObservableObject {
     }
     
     func botMove(excluding excluded: Move) -> Move {
-        Move.allCases.filter {$0 != excluded}.randomElement()!
+        let botsMove = Move.allCases.filter {$0 != excluded}.randomElement()!
+        print("Bot's pick is \(botsMove)")
+        return botsMove
     }
     
     //MARK: - Getter functions
