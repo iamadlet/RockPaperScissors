@@ -19,6 +19,8 @@ struct SinglePlayer: View {
     //MARK: - Body
     var body: some View {
         switch stage {
+            
+        //MARK: - "Picking the move" stage
         case .picking:
             VStack {
                 CustomTitle(text: "Take your pick", color: .black)
@@ -42,16 +44,17 @@ struct SinglePlayer: View {
                 }
             }
             
+        //MARK: - Waiting stage, some time for changing the move
         case .waiting:
             VStack {
                 CustomTitle(text: "Your pick", color: .black)
-
+                
                 Text("Score \(vm.firstScore):\(vm.secondScore)")
                     .foregroundStyle(Color.customPurple)
                     .padding(.bottom, 74)
-
+                
                 Spacer()
-
+                
                 PickMoveButton(gameManager: vm, move: selectedMove!) {
                     selectedMove = selectedMove!
                 }
@@ -64,9 +67,9 @@ struct SinglePlayer: View {
                     }
                     waitTask = task
                 }
-
+                
                 Spacer()
-
+                
                 CustomButton(text: "I changed my mind") {
                     waitTask?.cancel()
                     waitTask = nil
@@ -74,7 +77,8 @@ struct SinglePlayer: View {
                     stage = .picking
                 }
             }
-
+            
+        //MARK: - Loading of the Bot's move
         case .loading:
             VStack {
                 CustomTitle(text: "Your opponent is thinking", color: .black)
@@ -85,10 +89,11 @@ struct SinglePlayer: View {
                         stage = .botChose
                         vm.secondMove = vm.botMove(excluding: .notChosen)
                     }
-                .foregroundStyle(Color.customGray)
-                .frame(width: 342, height: 128)
+                    .foregroundStyle(Color.customGray)
+                    .frame(width: 342, height: 128)
             }
             
+        //MARK: - Showing Bot's move
         case .botChose:
             VStack {
                 CustomTitle(text: "Your opponent's pick", color: .black)
@@ -105,9 +110,12 @@ struct SinglePlayer: View {
             .task {
                 try? await Task.sleep(nanoseconds: 1_000_000_000)
                 roundResult = vm.getResult(first: selectedMove!, second: vm.secondMove)
-                stage = .result
+                withAnimation(.default) {
+                    stage = .result
+                }
             }
             
+        //MARK: - Showing the results (win/lose/tie)
         case .result:
             VStack {
                 switch roundResult {
@@ -125,7 +133,6 @@ struct SinglePlayer: View {
                     .foregroundStyle(Color.customPurple)
                     .padding(.bottom, 74)
                 
-//                Spacer()
                 
                 ResultView(firstMove: selectedMove!, secondMove: vm.secondMove)
                 
