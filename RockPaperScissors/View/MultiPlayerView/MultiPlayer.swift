@@ -112,11 +112,11 @@ struct MultiPlayer: View {
             VStack {
                 switch roundResult {
                 case 1:
-                    CustomTitle(text: "Win!", color: Color.customGreen)
+                    CustomTitle(text: "First player won!", color: Color.customGreen)
                 case 2:
-                    CustomTitle(text: "Lose", color: Color.customRed)
+                    CustomTitle(text: "Second player won!", color: Color.customRed)
                 case 3:
-                    CustomTitle(text: "Tie", color: Color.customYellow)
+                    CustomTitle(text: "Tie!", color: Color.customYellow)
                 default:
                     Text("Error")
                 }
