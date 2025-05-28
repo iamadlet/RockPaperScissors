@@ -31,8 +31,8 @@ class GameManager: ObservableObject {
             return 2
         default:
             print("It's a tie")
+            return 3 //MARK: - In case of a tie, 3 is returned
         }
-        return 3 //MARK: - In case of a tie, 3 is returned
     }
     
     func isGameEnded() -> Bool {
@@ -42,6 +42,10 @@ class GameManager: ObservableObject {
     func restartGame() {
         firstScore = 0
         secondScore = 0
+    }
+    
+    func botMove(excluding excluded: Move) -> Move {
+        Move.allCases.filter {$0 != excluded}.randomElement()!
     }
     
     //MARK: - Getter functions

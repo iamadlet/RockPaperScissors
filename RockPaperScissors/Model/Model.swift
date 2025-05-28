@@ -1,6 +1,6 @@
 import Foundation
 
-enum Move {
+enum Move: CaseIterable {
     case rock
     case paper
     case scissors
@@ -15,7 +15,16 @@ enum Move {
         case .scissors:
             return "✂️"
         case .notChosen:
-            return ""
+            return "nothing"
         }
     }
+}
+
+
+enum GameStage {
+    case picking
+    case waiting
+    case loading
+    case botChose
+    case result
 }

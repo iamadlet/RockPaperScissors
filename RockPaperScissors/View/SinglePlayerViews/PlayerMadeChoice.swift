@@ -1,10 +1,3 @@
-//
-//  PlayerMadeChoice.swift
-//  RockPaperScissors
-//
-//  Created by Адлет Жумагалиев on 28.05.2025.
-//
-
 import SwiftUI
 
 struct PlayerMadeChoice: View {
